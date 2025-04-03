@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/x-icon" href="/images/sketcheeze-no-back.png"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-...">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Sketcheeze</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="javascript:alert('Oh ho! \nNow who would\'ve thought to click on the Home button when you\'re already on the home page?\nSecret 2/5');" id="home">Home</a>
+        <h1>Sketcheeze</h1>
+        <div class="social-media-links">
+            <a href="https://www.instagram.com/sketcheeze_/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:sketcheeze1@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+        </div>
+    </div>
+    <div class="price-list">
+        <h1>Price List</h1>
+        <div class="item poster">
+            <div class="image">
+                <button class="prev">&#8249;</button>
+                <img src="images/poster 1.PNG" alt="poster">
+                <button class="next">&#8250;</button>
+            </div>
+            <div class="details">
+                <h3>Poster</h3>
+                <p>2000 PKR</p>
+                <p class="desc-title">What counts in this category?</p>
+                <p class="desc">Just about anything posted on my instagram account. But not everything, for example things that may not be included are drawings of real people, commission work of others, and non-drawing related posts. If you're still confused you can directly DM me on instagram and send me the post your interested in!</p>
+            </div>
+            
+        </div>  
+        <div class="item trad">
+            <div class="image">
+                <button class="prev">&#8249;</button>
+                <img src="images/trad sketch 1.PNG" alt="traditional sketch">
+                <button class="next">&#8250;</button>
+            </div>
+            <div class="details">
+                <h3>Traditional Sketch Commission</h3>
+                <p>? PKR</p>
+                <p class="desc-title">What counts in this category?</p>
+                <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit corporis modi unde consectetur beatae voluptatem eos omnis in quaerat soluta, adipisci error sit eligendi provident officiis, voluptatum, expedita dolor velit!</p>
+            </div>
+        </div>  
+        <div class="item digi">
+            <div class="image">
+                <button class="prev">&#8249;</button>
+                <img src="images/digi sketch 1.PNG" alt="digital sketch">
+                <button class="next">&#8250;</button>
+            </div>
+            <div class="details">
+                <h3>Digital Sketch Commission</h3>
+                <p>? PKR</p>
+                <p class="desc-title">What counts in this category?</p>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloribus illum animi voluptatibus. Ullam quo, voluptas quaerat sint optio, explicabo tenetur eveniet dolores eos temporibus dolor. Voluptas eum tempore delectus.</p>
+            </div>
+        </div>
+        <div class="item misc">
+            <div class="image">
+                <button class="prev">&#8249;</button>
+                <img src="images/misc 1.PNG" alt="miscellaneous items">
+                <button class="next">&#8250;</button>
+            </div>
+            <div class="details">
+                <h3>Misc Items</h3>
+                <p>? PKR</p>
+                <p class="desc-title">What counts in this category?</p>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloribus illum animi voluptatibus. Ullam quo, voluptas quaerat sint optio, explicabo tenetur eveniet dolores eos temporibus dolor. Voluptas eum tempore delectus.</p>
+            </div>
+        </div>  
+    </div>
+    <div class="shhh">
+        <img src="/images/logo.PNG"/>
+    </div>
+
+    <script>
+        $(".nav-bar h1").dblclick(()=>{
+            alert("So... you found my secret...\nThis is the first of 5, can you find the other 4?\nSecret 1/5");
+        });
+
+        const numberOfPosters = 11;
+        let currPoster = 1;
+        const numberOfTrad = 6;
+        let currTrad = 1;
+        const numberOfDigi = 2;
+        let currDigi= 1;
+        const numberOfMisc = 3;
+        let currMisc=1;
+
+        $(".poster .prev").attr("disabled",true);
+        $(".trad .prev").attr("disabled",true);
+        $(".digi .prev").attr("disabled",true);
+        $(".misc .prev").attr("disabled",true)
+
+        $(".shhh").hover(
+            function (){
+                $(this).addClass("visible");
+            },
+            function(){
+                $(this).removeClass("visible");
+            }
+        )
+        $(".shhh").click(()=>{
+            alert("Looks like nothing gets by you! You have a good eye.\nSecret 4/5");
+        })
+
+
+        function next(itemType,itemNo, currItem){
+            
+            switch (itemType){
+                case "poster":
+                    if(currItem<itemNo){
+                        currItem++;
+                        console.log(currItem)
+                    }
+                    break;
+                case "trad":
+                    if(currItem<itemNo){
+                        currItem++;
+                        console.log(currItem)
+                        console.log("Woah tech bro, who taught you to check console?\nSecret 3/5")
+                    }
+                    break;
+                case "digi":
+                    if(currItem<itemNo){
+                        currItem++;
+                        console.log(currItem)
+                    }
+                    break;
+                case "misc":
+                    if(currItem<itemNo){
+                        currItem++;
+                        console.log(currItem)
+                    }
+                    break;
+                default:
+                    currItem=currItem;
+            }
+            if(currItem==itemNo){
+                $("."+itemType+" .next").attr("disabled",true);
+            }
+            if(currItem<=itemNo-1 || itemNo==2){
+                $("."+itemType+" .prev").attr("disabled",false);
+            }
+            if(itemType==="poster" || itemType === "misc"){
+                $("."+itemType+" img").attr("src","images/"+itemType+" "+currItem+".PNG");
+            }
+            else{
+                $("."+itemType+" img").attr("src","images/"+itemType+" sketch "+currItem+".PNG");
+            }
+            return currItem;
+        }
+        function prev(itemType,itemNo, currItem){
+
+            switch (itemType){
+                case "poster":
+                    
+                    if(currItem>0){
+                        currItem--;
+                        console.log(currItem)
+                    }
+                    break;
+                case "trad":
+                    if(currItem>0){
+                        currItem--;
+                        console.log(currItem)
+                    }
+                    break;
+                case "digi":
+                    if(currItem>0){
+                        currItem--;
+                        console.log(currItem)
+                    }
+                    
+                    break;
+                case "misc":
+                    if(currItem>0){
+                        currItem--;
+                        console.log(currItem)
+                    }
+                    break;
+                default:
+                    currItem=currItem;
+            }
+            if(currItem==1){
+                $("."+itemType+" .prev").attr("disabled",true);
+            }
+            if(currItem>1 || itemNo==2){
+                $("."+itemType+" .next").attr("disabled",false);
+            }
+            if(itemType==="poster" || itemType==="misc"){
+                $("."+itemType+" img").attr("src","images/"+itemType+" "+currItem+".PNG");
+            }
+            else{
+                $("."+itemType+" img").attr("src","images/"+itemType+" sketch "+currItem+".PNG");
+            }
+            return currItem;
+        }
+
+        $(".poster .next").off("click").click(()=>{
+            temp = next("poster",numberOfPosters,currPoster); 
+            
+            currPoster = temp;
+        });
+        $(".poster .prev").off("click").click(()=>{
+            temp = prev("poster",numberOfPosters,currPoster); 
+            
+            currPoster = temp;
+        });
+        $(".trad .next").off("click").click(()=>{
+            temp = next("trad",numberOfTrad,currTrad); 
+            
+            currTrad = temp;
+        });
+        $(".trad .prev").off("click").click(()=>{
+            temp = prev("trad",numberOfTrad,currTrad); 
+            
+            currTrad = temp;
+        });
+        $(".digi .next").off("click").click(()=>{
+            temp = next("digi",numberOfDigi,currDigi); 
+            
+            currDigi = temp;
+        });
+        $(".digi .prev").off("click").click(()=>{
+            temp = prev("digi",numberOfDigi,currDigi); 
+            
+            currDigi = temp;
+        });
+        $(".misc .next").off("click").click(()=>{
+            temp = next("misc",numberOfMisc,currMisc); 
+            
+            currMisc = temp;
+        });
+        $(".misc .prev").off("click").click(()=>{
+            temp = prev("misc",numberOfMisc,currMisc); 
+            
+            currMisc = temp;
+        });
+    </script>
+</body>
+</html>
