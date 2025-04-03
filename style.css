@@ -1,0 +1,233 @@
+body{
+    background-color: white;
+    margin: 0px;
+}
+.nav-bar{
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 3px solid black;
+}
+.nav-bar h1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.nav-bar a{
+    font-size: 25px;
+}
+.social-media-links a{
+    margin: 0px 5px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.price-list{
+    box-shadow: 0 4px 8px 0 rgbs(255,255,0,0.2);
+    transition: 0.3s;
+    margin: 100px 100px 0px 100px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.price-list:hover{
+    box-shadow: 0 0px 16px 5px rgba(255, 255, 0, 0.6);
+}
+.price-list h1{
+    align-self: center;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    margin: 10px 0px;
+}
+.image img{
+    height:300px;
+    width: 230px;
+    object-fit:contain;
+    border-radius: 10px;
+    /* border: 3px solid black; */
+    margin-left: 20px;
+}
+.image{
+    position: relative;
+    height: 300px;
+    display: inline-block;
+    /* border: 3px solid blue; */
+}
+.next, .prev{
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid black;
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    padding: 0px 11px;
+    z-index: 1;
+    margin-top: 50%;
+    color: black;
+    background-color: white;
+}
+.next:hover, .prev:hover{
+    transition: 0.2s ease-in-out;
+    width: 45px;
+    height: 45px;
+}
+.next:disabled, .prev:disabled{
+    background-color: gainsboro;
+    color: gray;
+    cursor: default;
+}
+.next:disabled:hover, .prev:disabled:hover{
+    background-color: gainsboro;
+    color: gray;
+    width: 40px;
+    height: 40px;
+    cursor: default;
+}
+.next{
+    transform: translateX(-20px);
+}
+.desc-title{
+    background-color: rgb(224, 221, 221);
+}
+.shhh{
+    opacity: 0;
+    transition: opacity 5s;
+    margin: 10px;
+}
+.shhh img{
+    position: absolute;
+    width: 100px;
+    right: 0px;
+}
+.visible{
+    opacity: 1;
+}
+@media (max-width:800px){
+    body{
+        font-size: 14px;
+    }
+    .image img{
+        width: 150px;
+        height: 200px;
+    }
+    .price-list{
+        padding: 20px;
+    }
+    .next, .prev{
+        height: 27px;
+        width: 27px;
+        font-size: 20px;
+        padding: 0px 5px 0px 5px;
+        text-align: center;
+    }
+    .next:hover, .prev:hover{
+        transition: 0.2s ease-in-out;
+        width: 35px;
+        height: 35px;
+    }
+    .next:disabled:hover, .prev:disabled:hover{
+        background-color: gainsboro;
+        color: gray;
+        height: 27px;
+        width: 27px;
+        cursor: default;
+    }
+}
+@media (max-width:570px){
+    body{
+        font-size: 12px;
+    }
+    #home{
+        font-size: large;
+    }
+    .item{
+        justify-items: center;
+    }
+    .image{
+        height: 180px;
+    }
+    .image img{
+        width: 120px;
+        height: 180px;
+    }
+    .price-list{
+        padding: 20px;
+        margin: 15px;
+    }
+    .next, .prev{
+        height: 27px;
+        width: 27px;
+        font-size: 20px;
+        padding: 0px 5px 0px 5px;
+        text-align: center;
+    }
+    .next:hover, .prev:hover{
+        transition: none;
+        height: 27px;
+        width: 27px;
+    }
+    .next:disabled:hover, .prev:disabled:hover{
+        background-color: gainsboro;
+        color: gray;
+        height: 27px;
+        width: 27px;
+        cursor: default;
+    }
+}
+@media (max-width:370px){
+    body{
+        font-size: 12px;
+    }
+    #home{
+        font-size: large;
+    }
+    .item{
+        flex-direction: column;
+        justify-items: center;
+        gap: 0px;
+    }
+    .details{
+        margin-top: none;
+    }
+    .image{
+        height: 180px;
+    }
+    .image img{
+        margin-left: 0px;
+        width: 150px;
+        height: 180px;
+    }
+    .price-list{
+        padding: 20px;
+        margin: 15px;
+    }
+    .next, .prev{
+        height: 27px;
+        width: 27px;
+        font-size: 20px;
+        padding: 0px 5px 0px 5px;
+        text-align: center;
+    }
+    .next:hover, .prev:hover{
+        transition: none;
+        height: 27px;
+        width: 27px;
+    }
+    .next:disabled:hover, .prev:disabled:hover{
+        background-color: gainsboro;
+        color: gray;
+        height: 27px;
+        width: 27px;
+        cursor: default;
+    }
+}
