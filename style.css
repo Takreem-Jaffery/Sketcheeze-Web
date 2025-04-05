@@ -161,6 +161,12 @@ a{
     #home{
         font-size: large;
     }
+    #secret5{
+        display: none;
+    }
+    .nav-bar h1{
+        padding: 0px;
+    }
     .item{
         justify-items: center;
     }
